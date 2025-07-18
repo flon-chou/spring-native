@@ -13,7 +13,7 @@
 	<packaging>maven-plugin</packaging>
 
 	<properties>
-		<maven.version>3.3.9</maven.version>
+		<maven.version>3.9.8</maven.version>
 	</properties>
 
 	<dependencies>
@@ -156,11 +156,8 @@
 						</goals>
 						<configuration>
 							<target>
-								<replaceregexp match="\$\{revision\}" replace="${project.version}"
-											   flags="g" byline="true">
-									<fileset
-											dir="${project.build.directory}/local-repo/org/springframework/experimental/"
-											includes="**/*.pom" />
+								<replaceregexp match="\$\{revision\}" replace="${project.version}" flags="g" byline="true">
+									<fileset dir="${project.build.directory}/local-repo/org/springframework/experimental/" includes="**/*.pom"/>
 								</replaceregexp>
 							</target>
 						</configuration>
